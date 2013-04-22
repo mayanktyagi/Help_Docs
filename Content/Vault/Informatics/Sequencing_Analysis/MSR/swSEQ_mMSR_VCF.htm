@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="BaseSpace Help|Data Reference|Files" MadCap:medium="OLHsoftware" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" lang="en-us" xml:lang="en-us" MadCap:PathToHelpSystem="../../../../../" MadCap:HelpSystemFileName="BaseSpaceHelp.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>VCF Files</title>
+        <script type="text/javascript">/* <![CDATA[ */
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-26972076-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+		/* ]]> */</script>
+        <link href="../../../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../../../Resources/TableStyles/HorizStripes.css" rel="stylesheet" />
+        <link href="../../../../Resources/Stylesheets/GeneticEnergy.css" rel="stylesheet" />
+        <script src="../../../../SkinSupport/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop" style="display: none;"><a href="../../../../../BaseSpaceHelp_CSH.htm#Vault/Informatics/Sequencing_Analysis/MSR/swSEQ_mMSR_VCF.htm" style="">Open topic with navigation</a>
+        </p>
+        <p style="margin-top: 0;margin-bottom: 0;line-height: 6pt;">&#160;</p>
+        <table style="width: 100%;caption-side: top;border-left-style: none;border-right-style: none;border-top-style: none;border-top-width: 1px;border-top-color: #b7b7b7;border-bottom-style: none;">
+            <col style="width: 70px;" />
+            <col style="width: 90%;" />
+            <col style="width: 30px;" />
+            <tbody>
+                <tr>
+                    <td colspan="3">
+                        <h1>VCF Files</h1>
+                        <p class="ListHead">What is it?</p>
+                        <p class="Body">VCF is a text file format which contains information about variants found at specific positions in a reference genome. The file format consists of meta-information lines, a header line, and then data lines. Each data line contains information about a single variant.</p>
+                        <p class="ListHead">When to use it.</p>
+                        <p class="Body">Use it for direct interpretation or as a starting point for tertiary analysis with downstream analysis that are compatible with VCF, such as IGV or the UCSC genome browser.</p>
+                        <p class="ListHead">When not to use it.</p>
+                        <p class="Body">Do not use it with tools that are not compatible with the VCF format.</p>
+                        <p class="ListHead">How to use it</p>
+                        <p class="Body"><span class="SoftwareSoftware_Primary">BaseSpace</span>  apps that use VCF files find it when kicked off and directed to the sample. If using VCF files outside of <span class="SoftwareSoftware_Primary">BaseSpace</span>, download the file (<a href="../BS/swSEQ_mBS_Downloading_Files.htm" class="MCXref_0">Download Files</a>) to use it in outside tools.</p>
+                        <p class="ListHead">Detailed Description</p>
+                        <p class="Body">The file naming convention for VCF files is as follows: SampleName_S#.vcf (where # is the sample number determined by ordering in the sample sheet).</p>
+                        <p class="Body">The header of the VCF file describes the tags used in the remainder of the file and has the column header:</p>
+                        <p class="Preformatted">##fileformat=VCFv4.0</p>
+                        <p class="Preformatted">##fileDate=20110317</p>
+                        <p class="Preformatted">##source=SequenceAnalysisReport.vshost.exe</p>
+                        <p class="Preformatted">##reference=</p>
+                        <p class="Preformatted">##phasing=none</p>
+                        <p class="Preformatted">##INFO=&lt;ID=DP,Number=1,Type=Integer,Description="Total Depth"&gt;</p>
+                        <p class="Preformatted">##INFO=&lt;ID=TI,Number=.,Type=String,Description="Transcript ID"&gt;</p>
+                        <p class="Preformatted">##INFO=&lt;ID=GI,Number=.,Type=String,Description="Gene ID"&gt;</p>
+                        <p class="Preformatted">##INFO=&lt;ID=CD,Number=0,Type=Flag,Description="Coding Region"&gt;</p>
+                        <p class="Preformatted">##FILTER=&lt;ID=q20,Description="Quality below 20"&gt;</p>
+                        <p class="Preformatted">##FORMAT=&lt;ID=GT,Number=1,Type=String,Description="Genotype"&gt;</p>
+                        <p class="Preformatted">##FORMAT=&lt;ID=GQ,Number=1,Type=Integer,Description="Genotype Quality"&gt;</p>
+                        <p class="Preformatted">#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE</p>
+                        <p class="Body">A sample line of the VCF file is shown below.  The data that is used to populate each column is also described:</p>
+                        <p class="Preformatted">chr22	16285888	rs76548004	T	C	17	d15;q20	DP=11;TI=NM_001136213;GI=POTEH;CD	GT:GQ	1/0:17</p>
+                        <table style="mc-table-style: url('../../../../Resources/TableStyles/HorizStripes.css');caption-side: top;margin-left: 0;margin-right: auto;" class="TableStyle-HorizStripes" cellspacing="0">
+                            <col class="Column-Column1" />
+                            <col class="Column-Column1" />
+                            <thead>
+                                <tr class="Head-Header1">
+                                    <th class="HeadE-Column1-Header1">
+                                        <p class="CellHeadingLeft">Setting</p>
+                                    </th>
+                                    <th class="HeadD-Column1-Header1">
+                                        <p class="CellHeadingLeft">Description</p>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tr class="Body-Body1">
+                                <td class="BodyE-Column1-Body1">
+                                    <p class="CellHeadingLeft">ALT</p>
+                                </td>
+                                <td class="BodyD-Column1-Body1">
+                                    <p class="CellBodyLeft">The allele(s) that differ from the reference read.  For example, an insertion of a single T could be represented by reference A and alternate AT.</p>
+                                </td>
+                            </tr>
+                            <tr class="Body-Body2">
+                                <td class="BodyE-Column1-Body2">
+                                    <p class="CellHeadingLeft">CHROM</p>
+                                </td>
+                                <td class="BodyD-Column1-Body2">
+                                    <p class="CellBodyLeft">The chromosome of the reference genome.  Chromosomes appear in the same order as the reference FASTA file (generally karyotype order)</p>
+                                </td>
+                            </tr>
+                            <tr class="Body-Body1">
+                                <td class="BodyE-Column1-Body1">
+                                    <p class="CellHeadingLeft">FILTER</p>
+                                </td>
+                                <td class="BodyD-Column1-Body1">
+                                    <p class="CellBodyLeft">If all filters are passed, the' PASS' is written.  The possible filters are as follows:</p>
+                                    <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                        <col style="width: 9.536743E-07px;" />
+                                        <col style="width: 14.4px;" />
+                                        <col style="width: auto;" />
+                                        <tr>
+                                            <td valign="top" />
+                                            <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                            </td>
+                                            <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top">q20 –  The variant score is less than 20.  (Configurable using the VariantFilterQualityCutoff setting in the config file)</td>
+                                        </tr>
+                                    </table>
+                                    <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                        <col style="width: 9.536743E-07px;" />
+                                        <col style="width: 14.4px;" />
+                                        <col style="width: auto;" />
+                                        <tr>
+                                            <td valign="top" />
+                                            <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                            </td>
+                                            <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top">r8 – For an Indel, the number of repeats in the reference (of a 1- or 2-base repeat) is greater than 8.  (Configurable using the IndelRepeatFilterCutoff setting in the config file)</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr class="Body-Body2">
+                                <td class="BodyE-Column1-Body2">
+                                    <p class="CellHeadingLeft">FORMAT</p>
+                                </td>
+                                <td class="BodyD-Column1-Body2">
+                                    <p class="CellBodyLeft">The format column lists fields (separated by colons), for example, "GT:GQ".  The list of fields provided depends on the variant caller used.  The available fields are as follow:</p>
+                                    <p class="CellBodyLeft">AD – Entry of the form X,Y where X is the number of reference calls, Y the number of alternate calls</p>
+                                    <p class="CellBodyLeft">GQ – Genotype quality</p>
+                                    <p class="CellBodyLeft">GT – Genotype.  0 corresponds to the reference base, 1 corresponds to the first entry in the ALT column, 2 corresponds to the second entry in the ALT column, etc.  The '/' indicates that there is no phasing information.</p>
+                                    <p class="CellBodyLeft">NL – Noise level; an estimate of base calling noise at this position</p>
+                                    <p class="CellBodyLeft">SB – Strand bias at this position.  Larger negative values indicate more bias; values near zero indicate little strand bias.</p>
+                                    <p class="CellBodyLeft">VF – Variant frequency.  The percentage of reads supporting the alternate allele.</p>
+                                </td>
+                            </tr>
+                            <tr class="Body-Body1">
+                                <td class="BodyE-Column1-Body1">
+                                    <p class="CellHeadingLeft">ID</p>
+                                </td>
+                                <td class="BodyD-Column1-Body1">
+                                    <p class="CellBodyLeft">The rs number for the snp obtained from dbSNP.  If there are multiple rs numbers at this location, the list is semi-colon delimited.  If no dbSNP entry exists at this position, the missing value ('.') is used.</p>
+                                </td>
+                            </tr>
+                            <tr class="Body-Body2">
+                                <td class="BodyE-Column1-Body2">
+                                    <p class="CellHeadingLeft">INFO</p>
+                                </td>
+                                <td class="BodyD-Column1-Body2">
+                                    <p class="CellBodyLeft">These are the possible entries in the INFO column:</p>
+                                    <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                        <col style="width: 9.536743E-07px;" />
+                                        <col style="width: 14.4px;" />
+                                        <col style="width: auto;" />
+                                        <tr>
+                                            <td valign="top" />
+                                            <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                            </td>
+                                            <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top">AD – Entry of the form X,Y where X is the number of reference calls, Y the number of alternate calls.</td>
+                                        </tr>
+                                    </table>
+                                    <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                        <col style="width: 9.536743E-07px;" />
+                                        <col style="width: 14.4px;" />
+                                        <col style="width: auto;" />
+                                        <tr>
+                                            <td valign="top" />
+                                            <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                            </td>
+                                            <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top">CD – A flag indicating that the snp occurs within the coding region of at least one refGene entry</td>
+                                        </tr>
+                                    </table>
+                                    <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                        <col style="width: 9.536743E-07px;" />
+                                        <col style="width: 14.4px;" />
+                                        <col style="width: auto;" />
+                                        <tr>
+                                            <td valign="top" />
+                                            <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                            </td>
+                                            <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top">DP – The depth (number of base calls aligned to a this position)</td>
+                                        </tr>
+                                    </table>
+                                    <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                        <col style="width: 9.536743E-07px;" />
+                                        <col style="width: 14.4px;" />
+                                        <col style="width: auto;" />
+                                        <tr>
+                                            <td valign="top" />
+                                            <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                            </td>
+                                            <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top">GI – A comma separated list of gene IDs read from refGene</td>
+                                        </tr>
+                                    </table>
+                                    <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                        <col style="width: 9.536743E-07px;" />
+                                        <col style="width: 14.4px;" />
+                                        <col style="width: auto;" />
+                                        <tr>
+                                            <td valign="top" />
+                                            <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                            </td>
+                                            <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top">NL – Noise level; an estimate of base calling noise at this position.</td>
+                                        </tr>
+                                    </table>
+                                    <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                        <col style="width: 9.536743E-07px;" />
+                                        <col style="width: 14.4px;" />
+                                        <col style="width: auto;" />
+                                        <tr>
+                                            <td valign="top" />
+                                            <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                            </td>
+                                            <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top">TI – A comma separated list of transcript IDs read from refGene</td>
+                                        </tr>
+                                    </table>
+                                    <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                        <col style="width: 9.536743E-07px;" />
+                                        <col style="width: 14.4px;" />
+                                        <col style="width: auto;" />
+                                        <tr>
+                                            <td valign="top" />
+                                            <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                            </td>
+                                            <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top">SB – Strand bias at this position.</td>
+                                        </tr>
+                                    </table>
+                                    <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                        <col style="width: 9.536743E-07px;" />
+                                        <col style="width: 14.4px;" />
+                                        <col style="width: auto;" />
+                                        <tr>
+                                            <td valign="top" />
+                                            <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                            </td>
+                                            <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top">VF – Variant frequency.  The number of reads supporting the alternate allele.</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr class="Body-Body1">
+                                <td class="BodyE-Column1-Body1">
+                                    <p class="CellHeadingLeft">POS</p>
+                                </td>
+                                <td class="BodyD-Column1-Body1">
+                                    <p class="CellBodyLeft">The 1-based position of this variant in the reference chromosome.  The convention for .vcf files is that, for SNPs, this is the reference base with the variant; for indels or deletions, this is the reference base <span class="Bold">immediately before</span> the variant.  Variants are ordered by position.</p>
+                                </td>
+                            </tr>
+                            <tr class="Body-Body2">
+                                <td class="BodyE-Column1-Body2">
+                                    <p class="CellHeadingLeft">QUAL</p>
+                                </td>
+                                <td class="BodyD-Column1-Body2">
+                                    <p class="CellBodyLeft">A phred-scaled quality score assigned by the variant caller.  Higher scores indicate higher confidence in the variant (and lower probability of errors).  For a quality score of Q, the estimated probability of an error is 10-(Q/10).  For example, the set of Q30 calls should have a 0.1% error rate.  Note that many variant callers assign quality scores (based on their statistical models) which are high relative to the error rate observed in practice.</p>
+                                </td>
+                            </tr>
+                            <tr class="Body-Body1">
+                                <td class="BodyE-Column1-Body1">
+                                    <p class="CellHeadingLeft">REF</p>
+                                </td>
+                                <td class="BodyD-Column1-Body1">
+                                    <p class="CellBodyLeft">The reference genotype.  For example, a deletion of a single T could be represented by reference TT and alternate T.</p>
+                                </td>
+                            </tr>
+                            <tr class="Body-Body2">
+                                <td class="BodyE-Column1-Body2">
+                                    <p class="CellHeadingLeft">SAMPLE</p>
+                                </td>
+                                <td class="BodyD-Column1-Body2">
+                                    <p class="CellBodyLeft">The sample column gives the values specified in the FORMAT column. One MAXGT sample column is provided for the normal genotyping (assuming the reference).  For reference, a second column is provided for genotyping assuming the site is polymorphic.  See the Starling documentation for more details.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%;caption-side: top;border-left-style: none;border-right-style: none;border-top-style: none;border-top-width: 1px;border-top-color: #b7b7b7;border-bottom-style: none;margin-left: 0;margin-right: auto;">
+            <col />
+            <col />
+            <col style="width: 30px;" />
+            <tbody>
+                <tr>
+                    <td><iframe id="mctoolbar_1808444622_0" name="mctoolbar_1808444622_0" title="Toolbar" frameborder="0" scrolling="no" style="width: 100%; height: 28px; visibility: hidden;" allowTransparency="true" MadCap:buttonItems="PreviousTopic" src="../../../../../Skin/Toolbar.htm" class="MCTopicToolbar_0"></iframe>
+                    </td>
+                    <td style="font-size: 8pt;vertical-align: top;text-align: left;border-left-style: none;border-left-width: 1px;border-left-color: #e7e7e7;border-right-style: none;border-right-width: 1px;border-right-color: #e7e7e7;border-top-style: none;border-top-width: 1px;border-top-color: #e7e7e7;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #e7e7e7;color: #666666;">
+                        <p style="margin-bottom: 2px;">&#160;</p>
+                    </td>
+                    <td style="text-align: right;"><iframe id="mctoolbar_1808444622_1" name="mctoolbar_1808444622_1" title="Toolbar" frameborder="0" scrolling="no" style="width: 100%; height: 28px; visibility: hidden;" allowTransparency="true" MadCap:buttonItems="NextTopic" src="../../../../../Skin/Toolbar.htm" class="topicToolbarProxy_1"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-top-style: solid;border-top-width: 1px;border-top-color: #b7b7b7;">
+                        <p style="margin-bottom: 2px;text-align: left;margin-left: 0.250in;" class="Footnote">© <span class="Deliverable_DetailsCopyright">2011-2013</span> Illumina, Inc. All rights reserved.</p>
+                    </td>
+                    <td style="font-size: 8pt;vertical-align: top;text-align: left;border-left-style: none;border-left-width: 1px;border-left-color: #e7e7e7;border-right-style: none;border-right-width: 1px;border-right-color: #e7e7e7;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #e7e7e7;color: #666666;border-top-style: solid;border-top-width: 1px;border-top-color: #b7b7b7;" colspan="2">
+                        <p style="margin-bottom: 2px;text-align: right;margin-right: 0;" class="Footnote"><span class="Deliverable_DetailsPN">Rev. January 2013</span>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script type="text/javascript" src="../../../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

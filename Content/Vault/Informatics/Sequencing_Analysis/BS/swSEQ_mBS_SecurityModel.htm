@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="BaseSpace Help|Introduction" MadCap:medium="OLHsoftware" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" lang="en-us" xml:lang="en-us" MadCap:PathToHelpSystem="../../../../../" MadCap:HelpSystemFileName="BaseSpaceHelp.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>BaseSpace Security Model</title>
+        <script type="text/javascript">/* <![CDATA[ */
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-26972076-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+		/* ]]> */</script>
+        <link href="../../../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../../../Resources/Stylesheets/GeneticEnergy.css" rel="stylesheet" />
+        <script src="../../../../SkinSupport/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop" style="display: none;"><a href="../../../../../BaseSpaceHelp_CSH.htm#Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_SecurityModel.htm" style="">Open topic with navigation</a>
+        </p>
+        <p style="margin-top: 0;margin-bottom: 0;line-height: 6pt;">&#160;</p>
+        <table style="width: 100%;caption-side: top;border-left-style: none;border-right-style: none;border-top-style: none;border-top-width: 1px;border-top-color: #b7b7b7;border-bottom-style: none;">
+            <col style="width: 70px;" />
+            <col style="width: 90%;" />
+            <col style="width: 30px;" />
+            <tbody>
+                <tr>
+                    <td colspan="3">
+                        <h1>BaseSpace Security Model</h1>
+                        <p>Data security is a key concern in making the decision to move to cloud-based genomic storage and analysis. Illumina's BaseSpace is hosted on Amazon’s Web Services (<a href="http://aws.amazon.com/">AWS</a>) and provides a combination of Amazon’s comprehensive and well-tested approach to platform security, overlaid with Illumina’s own security testing and procedures, which includes reviews and tests by independent security professionals. This provides a cloud genomics solution that meets or exceeds the security provided by many institutional IT infrastructures. </p>
+                        <p class="ListHead">Amazon’s Web Services</p>
+                        <p> Illumina has chosen to work with AWS as the leader in cloud-based infrastructure, hosting customer-facing services and critical operations for both private industry and government departments including Treasury, DOE, and State. Amazon’s own security processes and standards are publicly available for review. AWS standards and accreditation include:</p>
+                        <ul>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">SOC 1/SSAE 16/ISAE 3402 (auditing)</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">FISMA moderate (U.S. Federal Government; for reference, the NIH’s own data centers are rated FISMA moderate)</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">PCI DSS Level 1 (electronic payments)</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">ISO 27001 (international security standard)</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">FIPS 140-2 (encryption)</td>
+                                </tr>
+                            </table>
+                        </ul>
+                        <p>Additionally, AWS data centers are protected by security staff and controlled access procedures. Staff with system access undergo background checks, and all hardware is located behind firewalls which are configured by default to block all traffic. Operating security patches are automatically applied to AWS servers, including BaseSpace servers. AWS actively monitors its firewalls to check for vulnerabilities, a service beyond the resources of most institutions. BaseSpace encrypts all data, something else that is rarely done in the institutional IT setting.</p>
+                        <p class="ListHead">MiSeq / HiSeq – BaseSpace Data Stream Software</p>
+                        <p>Illumina MiSeq and HiSeq instruments have on-board control and workflow software. This includes a robust data-streaming component which acts as a software broker with the BaseSpace API, allowing individual base-call (*.bcl) files to be sent over an encrypted connection, verified, and assembled into samples for analysis in real time as the sequencing run is conducted. Real-time monitoring of data generated by one sequencing instrument or a federation of instruments is possible through the BaseSpace interface.</p>
+                        <p>The MiSeq and HiSeq instrument control software, including the MiSeq Reporter software and the HiSeq Control Software suites, do not allow publicly addressable inbound communications. All communication is made through standard https requests initiated by the user at the instrument. Each data-upload transaction is linked to an authenticated user account.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%;caption-side: top;border-left-style: none;border-right-style: none;border-top-style: none;border-top-width: 1px;border-top-color: #b7b7b7;border-bottom-style: none;margin-left: 0;margin-right: auto;">
+            <col />
+            <col />
+            <col style="width: 30px;" />
+            <tbody>
+                <tr>
+                    <td><iframe id="mctoolbar_1808444622_0" name="mctoolbar_1808444622_0" title="Toolbar" frameborder="0" scrolling="no" style="width: 100%; height: 28px; visibility: hidden;" allowTransparency="true" MadCap:buttonItems="PreviousTopic" src="../../../../../Skin/Toolbar.htm" class="MCTopicToolbar_0"></iframe>
+                    </td>
+                    <td style="font-size: 8pt;vertical-align: top;text-align: left;border-left-style: none;border-left-width: 1px;border-left-color: #e7e7e7;border-right-style: none;border-right-width: 1px;border-right-color: #e7e7e7;border-top-style: none;border-top-width: 1px;border-top-color: #e7e7e7;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #e7e7e7;color: #666666;">
+                        <p style="margin-bottom: 2px;">&#160;</p>
+                    </td>
+                    <td style="text-align: right;"><iframe id="mctoolbar_1808444622_1" name="mctoolbar_1808444622_1" title="Toolbar" frameborder="0" scrolling="no" style="width: 100%; height: 28px; visibility: hidden;" allowTransparency="true" MadCap:buttonItems="NextTopic" src="../../../../../Skin/Toolbar.htm" class="topicToolbarProxy_1"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-top-style: solid;border-top-width: 1px;border-top-color: #b7b7b7;">
+                        <p style="margin-bottom: 2px;text-align: left;margin-left: 0.250in;" class="Footnote">© <span class="Deliverable_DetailsCopyright">2011-2013</span> Illumina, Inc. All rights reserved.</p>
+                    </td>
+                    <td style="font-size: 8pt;vertical-align: top;text-align: left;border-left-style: none;border-left-width: 1px;border-left-color: #e7e7e7;border-right-style: none;border-right-width: 1px;border-right-color: #e7e7e7;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #e7e7e7;color: #666666;border-top-style: solid;border-top-width: 1px;border-top-color: #b7b7b7;" colspan="2">
+                        <p style="margin-bottom: 2px;text-align: right;margin-right: 0;" class="Footnote"><span class="Deliverable_DetailsPN">Rev. January 2013</span>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script type="text/javascript" src="../../../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

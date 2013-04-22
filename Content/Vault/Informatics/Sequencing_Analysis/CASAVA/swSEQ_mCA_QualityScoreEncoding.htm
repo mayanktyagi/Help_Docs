@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="BaseSpace Help|Data Reference|Files|FASTQ Files|Quality Scores" MadCap:medium="OLHsoftware" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" lang="en-us" xml:lang="en-us" MadCap:PathToHelpSystem="../../../../../" MadCap:HelpSystemFileName="BaseSpaceHelp.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Quality Scores Encoding</title>
+        <script type="text/javascript">/* <![CDATA[ */
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-26972076-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+		/* ]]> */</script>
+        <link href="../../../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../../../Resources/TableStyles/Horiz.css" rel="stylesheet" />
+        <link href="../../../../Resources/Stylesheets/GeneticEnergy.css" rel="stylesheet" />
+        <script src="../../../../SkinSupport/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop" style="display: none;"><a href="../../../../../BaseSpaceHelp_CSH.htm#Vault/Informatics/Sequencing_Analysis/CASAVA/swSEQ_mCA_QualityScoreEncoding.htm" style="">Open topic with navigation</a>
+        </p>
+        <p style="margin-top: 0;margin-bottom: 0;line-height: 6pt;">&#160;</p>
+        <table style="width: 100%;caption-side: top;border-left-style: none;border-right-style: none;border-top-style: none;border-top-width: 1px;border-top-color: #b7b7b7;border-bottom-style: none;">
+            <col style="width: 70px;" />
+            <col style="width: 90%;" />
+            <col style="width: 30px;" />
+            <tbody>
+                <tr>
+                    <td colspan="3">
+                        <h1 MadCap:conditions="">Quality Scores Encoding<a name="kanchor35"></a></h1>
+                        <p class="Body">Quality scores are encoded into a compact form in FASTQ files which uses only one byte per quality value. In this encoding the quality score is represented as the character with an ASCII code equal to its value + 33 (as of CASAVA v1.8). The following table demonstrates the relationship between the encoding character, the character's ASCII code, and the quality score represented.</p>
+                        <table style="mc-table-style: url('../../../../Resources/TableStyles/Horiz.css');width: 95%;caption-side: top;" class="TableStyle-Horiz" cellspacing="0">
+                            <caption MadCap:autonum="Table 2 &#160;&#160;"><span class="autonumber"><span class="KeyColorBold">Table 2 &#160;&#160;</span></span>
+                                <p class="TblTitle" MadCap:autonum="Table: &#160;&#160;"><span class="autonumber"><span class="KeyColorBold">Table: &#160;&#160;</span></span>ASCII Characters Encoding Q-scores 0–40</p>
+                            </caption>
+                            <col class="Column-Column1" />
+                            <col class="Column-Column1" />
+                            <col class="Column-Column1" />
+                            <col class="Column-Column1" />
+                            <col class="Column-Column1" />
+                            <col class="Column-Column1" />
+                            <col class="Column-Column1" />
+                            <col class="Column-Column1" />
+                            <col class="Column-Column1" />
+                            <col class="Column-Column1" />
+                            <col class="Column-Column1" />
+                            <thead>
+                                <tr class="Head-Header1">
+                                    <td width="50" class="HeadE-Column1-Header1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellHeadingLeft" xmlns="">Symbol</p>
+                                    </td>
+                                    <td width="40" class="HeadE-Column1-Header1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellHeadingLeft" xmlns="">ASCII Code</p>
+                                    </td>
+                                    <td width="260" class="HeadE-Column1-Header1" align="left" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellHeadingLeft" xmlns="">Q-Score</p>
+                                    </td>
+                                    <th class="HeadE-Column1-Header1">&#160;</th>
+                                    <td width="50" class="HeadE-Column1-Header1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellHeadingLeft" xmlns="">Symbol</p>
+                                    </td>
+                                    <td class="HeadE-Column1-Header1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellHeadingLeft" xmlns="">ASCII Code</p>
+                                    </td>
+                                    <td class="HeadE-Column1-Header1" align="left" xmlns="http://www.w3.org/1999/xhtml" width="260">
+                                        <p class="CellHeadingLeft" xmlns="">Q-Score</p>
+                                    </td>
+                                    <th class="HeadE-Column1-Header1">&#160;</th>
+                                    <td width="50" class="HeadE-Column1-Header1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellHeadingLeft" xmlns="">Symbol</p>
+                                    </td>
+                                    <td class="HeadE-Column1-Header1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellHeadingLeft" xmlns="">ASCII Code</p>
+                                    </td>
+                                    <td width="260" class="HeadD-Column1-Header1" align="left" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellHeadingLeft" xmlns="">Q-Score</p>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">!</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">33</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">0</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft">&#160;</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">/</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">47</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">14</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">&#160;</td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">=</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">61</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">28</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body2">
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">"</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">34</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">1</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft">&#160;</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">0</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">48</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">15</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">&#160;</td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">&gt;</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">62</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">29</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">#</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">35</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">2</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft">&#160;</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">1</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">49</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">16</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">&#160;</td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">?</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">63</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">30</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body2">
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">$</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">36</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">3</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft">&#160;</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">2</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">50</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">17</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">&#160;</td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">@</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">64</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">31</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">%</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">37</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">4</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft">&#160;</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">3</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">51</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">18</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">&#160;</td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">A</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">65</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">32</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body2">
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">&amp;</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">38</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">5</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft">&#160;</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">4</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">52</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">19</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">&#160;</td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">B</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">66</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">33</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">'</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">39</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">6</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft">&#160;</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">5</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">53</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">20</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">&#160;</td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">C</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">67</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">34</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body2">
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">(</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">40</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">7</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft">&#160;</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">6</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">54</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">21</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">&#160;</td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">D</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">68</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">35</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">)</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">41</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">8</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft">&#160;</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">7</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">55</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">22</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">&#160;</td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">E</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">69</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">36</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body2">
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">*</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">42</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">9</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft">&#160;</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">8</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">56</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">23</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">&#160;</td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">F</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">70</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">37</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">+</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">43</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">10</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft">&#160;</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">9</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">57</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">24</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">&#160;</td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">G</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">71</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">38</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body2">
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">,</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">44</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">11</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft">&#160;</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">:</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">58</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">25</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">&#160;</td>
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft">H</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft">72</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body2">
+                                        <p class="CellBodyLeft">39</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">-</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">45</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">12</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft">&#160;</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">;</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">59</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">26</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">&#160;</td>
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft">I</p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft">73</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1">
+                                        <p class="CellBodyLeft">40</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body2">
+                                    <td class="BodyB-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">.</p>
+                                    </td>
+                                    <td class="BodyB-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">46</p>
+                                    </td>
+                                    <td class="BodyB-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">13</p>
+                                    </td>
+                                    <td class="BodyB-Column1-Body2">
+                                        <p class="CellBodyLeft">&#160;</p>
+                                    </td>
+                                    <td class="BodyB-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">&lt;</p>
+                                    </td>
+                                    <td class="BodyB-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">60</p>
+                                    </td>
+                                    <td class="BodyB-Column1-Body2" xmlns="http://www.w3.org/1999/xhtml">
+                                        <p class="CellBodyLeft" xmlns="">27</p>
+                                    </td>
+                                    <td class="BodyB-Column1-Body2">&#160;</td>
+                                    <td class="BodyB-Column1-Body2">&#160;</td>
+                                    <td class="BodyB-Column1-Body2">&#160;</td>
+                                    <td class="BodyA-Column1-Body2">&#160;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%;caption-side: top;border-left-style: none;border-right-style: none;border-top-style: none;border-top-width: 1px;border-top-color: #b7b7b7;border-bottom-style: none;margin-left: 0;margin-right: auto;">
+            <col />
+            <col />
+            <col style="width: 30px;" />
+            <tbody>
+                <tr>
+                    <td><iframe id="mctoolbar_1808444622_0" name="mctoolbar_1808444622_0" title="Toolbar" frameborder="0" scrolling="no" style="width: 100%; height: 28px; visibility: hidden;" allowTransparency="true" MadCap:buttonItems="PreviousTopic" src="../../../../../Skin/Toolbar.htm" class="MCTopicToolbar_0"></iframe>
+                    </td>
+                    <td style="font-size: 8pt;vertical-align: top;text-align: left;border-left-style: none;border-left-width: 1px;border-left-color: #e7e7e7;border-right-style: none;border-right-width: 1px;border-right-color: #e7e7e7;border-top-style: none;border-top-width: 1px;border-top-color: #e7e7e7;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #e7e7e7;color: #666666;">
+                        <p style="margin-bottom: 2px;">&#160;</p>
+                    </td>
+                    <td style="text-align: right;"><iframe id="mctoolbar_1808444622_1" name="mctoolbar_1808444622_1" title="Toolbar" frameborder="0" scrolling="no" style="width: 100%; height: 28px; visibility: hidden;" allowTransparency="true" MadCap:buttonItems="NextTopic" src="../../../../../Skin/Toolbar.htm" class="topicToolbarProxy_1"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-top-style: solid;border-top-width: 1px;border-top-color: #b7b7b7;">
+                        <p style="margin-bottom: 2px;text-align: left;margin-left: 0.250in;" class="Footnote">© <span class="Deliverable_DetailsCopyright">2011-2013</span> Illumina, Inc. All rights reserved.</p>
+                    </td>
+                    <td style="font-size: 8pt;vertical-align: top;text-align: left;border-left-style: none;border-left-width: 1px;border-left-color: #e7e7e7;border-right-style: none;border-right-width: 1px;border-right-color: #e7e7e7;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #e7e7e7;color: #666666;border-top-style: solid;border-top-width: 1px;border-top-color: #b7b7b7;" colspan="2">
+                        <p style="margin-bottom: 2px;text-align: right;margin-right: 0;" class="Footnote"><span class="Deliverable_DetailsPN">Rev. January 2013</span>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script type="text/javascript" src="../../../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

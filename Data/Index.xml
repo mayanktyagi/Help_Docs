@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CatapultTargetIndex Count="34">
+    <!-- saved from url=(0014)about:internet -->
+    <IndexEntry>
+        <Entries>
+            <IndexEntry Term="% Aligned">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor11" UsedConditions="" LocalConditions="" />
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor12" UsedConditions="" LocalConditions="" />
+                    <IndexLink Title="Data by Lane Plot" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_DatabyLane.htm#kanchor33" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="% Base">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor2" UsedConditions="" LocalConditions="" />
+                    <IndexLink Title="Data By Cycle Plot" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_DatabyCycle.htm#kanchor20" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="% Perfect Reads">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor13" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="% Perfect Reads—The percentage of reads that align perfectly, as determined by a spiked in PhiX control sample. If no PhiX control sample is run in the lane, this chart is not available.">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Data By Cycle Plot" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_DatabyCycle.htm#kanchor24" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="% Phasing">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor9" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="% Prephasing">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor9" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="%Q&gt;20">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Data By Cycle Plot" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_DatabyCycle.htm#kanchor21" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="%Q&gt;30">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor3" UsedConditions="" LocalConditions="" />
+                    <IndexLink Title="Data By Cycle Plot" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_DatabyCycle.htm#kanchor21" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="Called Intensity">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor15" UsedConditions="" LocalConditions="" />
+                    <IndexLink Title="Data By Cycle Plot" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_DatabyCycle.htm#kanchor26" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="Cluster PF">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor7" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="Clusters">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor5" UsedConditions="" LocalConditions="" />
+                    <IndexLink Title="Data by Lane Plot" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_DatabyLane.htm#kanchor31" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="Corrected Intensity">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor14" UsedConditions="" LocalConditions="" />
+                    <IndexLink Title="Data By Cycle Plot" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_DatabyCycle.htm#kanchor25" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="customer support">
+                <Entries />
+                <Links>
+                    <IndexLink Title="TechSupport" Link="/Content/Templates/BackMatter/TechSupport.htm#kanchor40" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="Data By Cycle">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Data By Cycle Plot" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_DatabyCycle.htm#kanchor17" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="Data By Lane">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Data by Lane Plot" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_DatabyLane.htm#kanchor30" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="Density PF">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor6" UsedConditions="" LocalConditions="" />
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor10" UsedConditions="" LocalConditions="" />
+                    <IndexLink Title="Data by Lane Plot" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_DatabyLane.htm#kanchor32" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="documentation">
+                <Entries />
+                <Links>
+                    <IndexLink Title="TechSupport" Link="/Content/Templates/BackMatter/TechSupport.htm#kanchor40" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="Error Rate">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor8" UsedConditions="" LocalConditions="" />
+                    <IndexLink Title="Data By Cycle Plot" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_DatabyCycle.htm#kanchor23" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="Flow Cell Chart">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor1" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="FWHM">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Data By Cycle Plot" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_DatabyCycle.htm#kanchor19" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="help, technical">
+                <Entries />
+                <Links>
+                    <IndexLink Title="TechSupport" Link="/Content/Templates/BackMatter/TechSupport.htm#kanchor40" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="Intensity">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Data By Cycle Plot" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_DatabyCycle.htm#kanchor18" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="median Q-Socre">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor4" UsedConditions="" LocalConditions="" />
+                    <IndexLink Title="Data By Cycle Plot" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_DatabyCycle.htm#kanchor22" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="Metagenomics workflow">
+                <Entries>
+                    <IndexEntry Term="pie chart">
+                        <Entries />
+                        <Links>
+                            <IndexLink Title="Metagenomics Pie Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_MetagenomicsPie.htm#kanchor37" UsedConditions="" LocalConditions="" />
+                        </Links>
+                        <SeeAlsoLinks />
+                        <IndexControlLinks />
+                        <SortAsLinks />
+                    </IndexEntry>
+                </Entries>
+                <Links />
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="PCR duplicates">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Sample QC Table" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_SampleQCTable.htm#kanchor39" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="Phred scale">
+                <Entries />
+                <Links>
+                    <IndexLink Title="QScore Distribution" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_QscoreDistr.htm#kanchor29" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="QScore Distribution">
+                <Entries />
+                <Links>
+                    <IndexLink Title="QScore Distribution" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_QscoreDistr.htm#kanchor28" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="quality scores">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Quality Scores" Link="/Content/Vault/Informatics/Sequencing_Analysis/CASAVA/swSEQ_mCA_QualityScores.htm#kanchor34" UsedConditions="" LocalConditions="" />
+                    <IndexLink Title="Quality Scores Encoding" Link="/Content/Vault/Informatics/Sequencing_Analysis/CASAVA/swSEQ_mCA_QualityScoreEncoding.htm#kanchor35" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="samples graph">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Assembly Samples Graph" Link="/Content/Vault/Informatics/Sequencing_Analysis/MSR/swSEQ_mMSR_SamplesGraph_A.htm#kanchor38" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="Signal to Noise">
+                <Entries />
+                <Links>
+                    <IndexLink Title="Flow Cell Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FCchart.htm#kanchor16" UsedConditions="" LocalConditions="" />
+                    <IndexLink Title="Data By Cycle Plot" Link="/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_DatabyCycle.htm#kanchor27" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="Small RNA workflow">
+                <Entries>
+                    <IndexEntry Term="pie chart">
+                        <Entries />
+                        <Links>
+                            <IndexLink Title="Small RNA Pie Chart" Link="/Content/Vault/Informatics/Sequencing_Analysis/MSR/swSEQ_mMSR_PieChartSmRNA.htm#kanchor36" UsedConditions="" LocalConditions="" />
+                        </Links>
+                        <SeeAlsoLinks />
+                        <IndexControlLinks />
+                        <SortAsLinks />
+                    </IndexEntry>
+                </Entries>
+                <Links />
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+            <IndexEntry Term="technical assistance">
+                <Entries />
+                <Links>
+                    <IndexLink Title="TechSupport" Link="/Content/Templates/BackMatter/TechSupport.htm#kanchor40" UsedConditions="" LocalConditions="" />
+                </Links>
+                <SeeAlsoLinks />
+                <IndexControlLinks />
+                <SortAsLinks />
+            </IndexEntry>
+        </Entries>
+        <Links />
+        <SeeAlsoLinks />
+        <IndexControlLinks />
+        <SortAsLinks />
+    </IndexEntry>
+</CatapultTargetIndex>

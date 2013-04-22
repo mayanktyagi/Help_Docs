@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="BaseSpace Help|Data Reference|Files" MadCap:medium="OLHsoftware" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" lang="en-us" xml:lang="en-us" MadCap:PathToHelpSystem="../../../../../" MadCap:HelpSystemFileName="BaseSpaceHelp.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Sample Sheet</title>
+        <script type="text/javascript">/* <![CDATA[ */
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-26972076-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+		/* ]]> */</script>
+        <link href="../../../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../../../Resources/TableStyles/HorizStripes.css" rel="stylesheet" />
+        <link href="../../../../Resources/Stylesheets/GeneticEnergy.css" rel="stylesheet" />
+        <script src="../../../../SkinSupport/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop" style="display: none;"><a href="../../../../../BaseSpaceHelp_CSH.htm#Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_SampleSheet.htm" style="">Open topic with navigation</a>
+        </p>
+        <p style="margin-top: 0;margin-bottom: 0;line-height: 6pt;">&#160;</p>
+        <table style="width: 100%;caption-side: top;border-left-style: none;border-right-style: none;border-top-style: none;border-top-width: 1px;border-top-color: #b7b7b7;border-bottom-style: none;">
+            <col style="width: 70px;" />
+            <col style="width: 90%;" />
+            <col style="width: 30px;" />
+            <tbody>
+                <tr>
+                    <td colspan="3">
+                        <h1>Sample Sheet</h1>
+                        <p class="ListHead">What is it?</p>
+                        <p class="Body">The sample sheet is a comma-delimited file (SampleSheet.csv) that stores much of the information needed to set up and analyze a sequencing experiment. The file includes a list of samples and their index sequences.</p>
+                        <p class="ListHead">When to use it.</p>
+                        <p class="Body">Every run in <span class="SoftwareSoftware_Primary">BaseSpace</span> needs to have an associated sample sheet in order to define projects and samples,  assign indices, and run sample sheet driven workflow apps.</p>
+                        <p class="ListHead">When not to use it.</p>
+                        <p class="Body">Not applicable.</p>
+                        <p class="ListHead">How to use it</p>
+                        <p class="Body">The following table is for reference purposes only. For details about creating or modifying a sample sheet, see the MiSeq Reporter User Guide, <i>MiSeq Sample Sheet Quick Reference Guide</i> or <i>HiSeq User Guide</i>. You can create a sample sheet using the <i>Illumina Experiment Manager</i>.</p>
+                        <table class="TableStyle-HorizStripes" style="caption-side: top;mc-table-style: url('../../../../Resources/TableStyles/HorizStripes.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+                            <caption valign="top" style="padding-bottom: 2pt;" MadCap:autonum="Table 1 &#160;&#160;"><span class="autonumber"><span class="KeyColorBold">Table 1 &#160;&#160;</span></span>Sample Sheet Fields</caption>
+                            <col class="Column-Column1" style="width: 98px;" />
+                            <col class="Column-Column1" />
+                            <thead>
+                                <tr class="Head-Header1">
+                                    <td class="HeadE-Column1-Header1">
+                                        <p class="CellHeadingLeft">Row</p>
+                                    </td>
+                                    <td class="HeadD-Column1-Header1">
+                                        <p class="CellHeadingLeft">Description</p>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellHeadingLeft"><span class="Bold">Date</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1">
+                                        <p class="CellBodyLeft">The date the sequencing run was performed.</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body2">
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellHeadingLeft"><span class="Bold">Data</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body2">
+                                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                            <col style="width: 9.536743E-07px;" />
+                                            <col style="width: 14.4px;" />
+                                            <col style="width: auto;" />
+                                            <tr>
+                                                <td valign="top" />
+                                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                                </td>
+                                                <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top"><b>Contaminants</b> – The path to the folder containing FASTA files of contaminants (used only for SmallRNA)</td>
+                                            </tr>
+                                        </table>
+                                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                            <col style="width: 9.536743E-07px;" />
+                                            <col style="width: 14.4px;" />
+                                            <col style="width: auto;" />
+                                            <tr>
+                                                <td valign="top" />
+                                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                                </td>
+                                                <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top"><b>GenomePath</b> – The reference genome folder containing the FASTA files to be used in the alignment step</td>
+                                            </tr>
+                                        </table>
+                                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                            <col style="width: 9.536743E-07px;" />
+                                            <col style="width: 14.4px;" />
+                                            <col style="width: auto;" />
+                                            <tr>
+                                                <td valign="top" />
+                                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                                </td>
+                                                <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top"><b>Index2</b> – Represents the sequence string of this sample's index. Valid characters in this string are A,C,G,T and N. 'N' matches any base.</td>
+                                            </tr>
+                                        </table>
+                                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                            <col style="width: 9.536743E-07px;" />
+                                            <col style="width: 14.4px;" />
+                                            <col style="width: auto;" />
+                                            <tr>
+                                                <td valign="top" />
+                                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                                </td>
+                                                <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top"><b>IndexSequence</b> – Represents the sequence string of a sample's index. Valid characters in this string are A, C, G, T and N. 'N' matches any base.</td>
+                                            </tr>
+                                        </table>
+                                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                            <col style="width: 9.536743E-07px;" />
+                                            <col style="width: 14.4px;" />
+                                            <col style="width: auto;" />
+                                            <tr>
+                                                <td valign="top" />
+                                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                                </td>
+                                                <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top"><b>MiRNA</b> – The path to the folder containing FASTA files of mature miRNAs (used only for SmallRNA)</td>
+                                            </tr>
+                                        </table>
+                                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                            <col style="width: 9.536743E-07px;" />
+                                            <col style="width: 14.4px;" />
+                                            <col style="width: auto;" />
+                                            <tr>
+                                                <td valign="top" />
+                                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                                </td>
+                                                <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top"><b>RNA</b> – The path to the folder containing FASTA files of small RNAs (used only for SmallRNA)</td>
+                                            </tr>
+                                        </table>
+                                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                            <col style="width: 9.536743E-07px;" />
+                                            <col style="width: 14.4px;" />
+                                            <col style="width: auto;" />
+                                            <tr>
+                                                <td valign="top" />
+                                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                                </td>
+                                                <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top"><b>SampleID</b> – A string identifier for the sample. This is usually a bar code but can have any value.</td>
+                                            </tr>
+                                        </table>
+                                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                            <col style="width: 9.536743E-07px;" />
+                                            <col style="width: 14.4px;" />
+                                            <col style="width: auto;" />
+                                            <tr>
+                                                <td valign="top" />
+                                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                                </td>
+                                                <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top"><b>Manifest</b> – The manifest file</td>
+                                            </tr>
+                                        </table>
+                                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                            <col style="width: 9.536743E-07px;" />
+                                            <col style="width: 14.4px;" />
+                                            <col style="width: auto;" />
+                                            <tr>
+                                                <td valign="top" />
+                                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                                </td>
+                                                <td class="AutoNumber_p_CellBullet" MadCap:autonum="• " valign="top"><b>Name</b> – A string identifier for the sample. This is used in the reporting web page.</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellHeadingLeft"><span class="Bold">Experiment Name</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1">
+                                        <p class="CellBodyLeft">(Optional) A descriptive name of the experiment.</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body2">
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellHeadingLeft"><span class="Bold">Investigator Name</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body2">
+                                        <p class="CellBodyLeft">(Optional) The name of the investigator.</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellHeadingLeft"><span class="Bold">Manifests</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1">
+                                        <p class="CellBodyLeft">This section is only used by the Amplicon workflow and is the name of the file  (provided by Illumina) used in the Amplicon Workflow.  It is mandatory for the Amplicon workflow and ignored by other workflows.  The file specifies the alignments to a reference and the targeted reference regions used in the Amplicon workflow.</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body2">
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellHeadingLeft"><span class="Bold">Project Name</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body2">
+                                        <p class="CellBodyLeft">(Optional) A descriptive name of the run.</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellHeadingLeft"><span class="Bold">Site Reports</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1">
+                                        <p class="CellBodyLeft">This section is optional<MadCap:conditionalText MadCap:conditions="Version.RUO"> and used by only the Resequencing and Custom Amplicon workflows</MadCap:conditionalText>. Each line below the SiteReports section header is the name of a SiteReport Input File. This file designates positions on a given chromosome to report the genotype found at that position.</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body2">
+                                    <td class="BodyB-Column1-Body2">
+                                        <p class="CellHeadingLeft"><span class="Bold">Workflow</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyA-Column1-Body2">
+                                        <p class="CellBodyLeft">The analysis workflow for the run.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%;caption-side: top;border-left-style: none;border-right-style: none;border-top-style: none;border-top-width: 1px;border-top-color: #b7b7b7;border-bottom-style: none;margin-left: 0;margin-right: auto;">
+            <col />
+            <col />
+            <col style="width: 30px;" />
+            <tbody>
+                <tr>
+                    <td><iframe id="mctoolbar_1808444622_0" name="mctoolbar_1808444622_0" title="Toolbar" frameborder="0" scrolling="no" style="width: 100%; height: 28px; visibility: hidden;" allowTransparency="true" MadCap:buttonItems="PreviousTopic" src="../../../../../Skin/Toolbar.htm" class="MCTopicToolbar_0"></iframe>
+                    </td>
+                    <td style="font-size: 8pt;vertical-align: top;text-align: left;border-left-style: none;border-left-width: 1px;border-left-color: #e7e7e7;border-right-style: none;border-right-width: 1px;border-right-color: #e7e7e7;border-top-style: none;border-top-width: 1px;border-top-color: #e7e7e7;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #e7e7e7;color: #666666;">
+                        <p style="margin-bottom: 2px;">&#160;</p>
+                    </td>
+                    <td style="text-align: right;"><iframe id="mctoolbar_1808444622_1" name="mctoolbar_1808444622_1" title="Toolbar" frameborder="0" scrolling="no" style="width: 100%; height: 28px; visibility: hidden;" allowTransparency="true" MadCap:buttonItems="NextTopic" src="../../../../../Skin/Toolbar.htm" class="topicToolbarProxy_1"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-top-style: solid;border-top-width: 1px;border-top-color: #b7b7b7;">
+                        <p style="margin-bottom: 2px;text-align: left;margin-left: 0.250in;" class="Footnote">© <span class="Deliverable_DetailsCopyright">2011-2013</span> Illumina, Inc. All rights reserved.</p>
+                    </td>
+                    <td style="font-size: 8pt;vertical-align: top;text-align: left;border-left-style: none;border-left-width: 1px;border-left-color: #e7e7e7;border-right-style: none;border-right-width: 1px;border-right-color: #e7e7e7;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #e7e7e7;color: #666666;border-top-style: solid;border-top-width: 1px;border-top-color: #b7b7b7;" colspan="2">
+                        <p style="margin-bottom: 2px;text-align: right;margin-right: 0;" class="Footnote"><span class="Deliverable_DetailsPN">Rev. January 2013</span>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script type="text/javascript" src="../../../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="BaseSpace Help|Data Reference|Files" MadCap:medium="OLHsoftware" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" lang="en-us" xml:lang="en-us" MadCap:PathToHelpSystem="../../../../../" MadCap:HelpSystemFileName="BaseSpaceHelp.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>FASTQ Files</title>
+        <script type="text/javascript">/* <![CDATA[ */
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-26972076-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+		/* ]]> */</script>
+        <link href="../../../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../../../Resources/TableStyles/NoBorder.css" rel="stylesheet" />
+        <link href="../../../../Resources/TableStyles/Horiz.css" rel="stylesheet" />
+        <link href="../../../../Resources/Stylesheets/GeneticEnergy.css" rel="stylesheet" />
+        <script src="../../../../SkinSupport/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop" style="display: none;"><a href="../../../../../BaseSpaceHelp_CSH.htm#Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FASTQFiles.htm" style="">Open topic with navigation</a>
+        </p>
+        <p style="margin-top: 0;margin-bottom: 0;line-height: 6pt;">&#160;</p>
+        <table style="width: 100%;caption-side: top;border-left-style: none;border-right-style: none;border-top-style: none;border-top-width: 1px;border-top-color: #b7b7b7;border-bottom-style: none;">
+            <col style="width: 70px;" />
+            <col style="width: 90%;" />
+            <col style="width: 30px;" />
+            <tbody>
+                <tr>
+                    <td colspan="3">
+                        <h1 MadCap:conditions="">FASTQ Files</h1>
+                        <p class="ListHead">What is it?</p>
+                        <p class="Body"><span class="SoftwareSoftware_Primary">BaseSpace</span> converts *.bcl files into FASTQ files, which contains base call and quality information.</p>
+                        <p class="ListHead">When to use it.</p>
+                        <p class="Body"> FASTQ can be used as sequence input for alignment.</p>
+                        <p class="ListHead">When not to use it.</p>
+                        <p class="Body">Do not use it with tools that are not compatible with the FASTQ format.</p>
+                        <p class="ListHead">How to use it</p>
+                        <p class="Body"><span class="SoftwareSoftware_Primary">BaseSpace</span> automatically uses FASTQ files in sample sheet-driven workflow apps. Other apps that perform alignment, such as Isaac, also automatically use FASTQ files when kicked off.</p>
+                        <p class="Body">A detailed description of the FASTQ format is provided below.</p>
+                        <p class="ListHead">Naming</p>
+                        <p class="Body" MadCap:conditions="">Illumina FASTQ files use the following naming scheme:</p>
+                        <p class="Preformatted" MadCap:conditions="">&lt;sample name&gt;_&lt;barcode sequence&gt;_L&lt;lane&gt;_R&lt;read number&gt;_&lt;set number&gt;.fastq.gz</p>
+                        <p class="Body" MadCap:conditions="">For example, the following is a valid FASTQ file name:</p>
+                        <p class="Preformatted" MadCap:conditions="">NA10831_ATCACG_L002_R1_001.fastq.gz</p>
+                        <p class="Body">Note that  lane and set numbers are 0-padded to 3 digits.</p>
+                        <p class="Body">In the case of non-multiplexed runs, &lt;sample name&gt; will be replaced with the lane numbers (lane1, lane2, ..., lane8) and &lt;barcode sequence&gt; will be replaced with "NoIndex".</p>
+                        <p class="ListHead">Set&#160;Size</p>
+                        <p class="Body" MadCap:conditions="">The FASTQ files are divided in files with the file size set by the --fastq-cluster-count command line option of configureBclToFastq.pl.The different files are distinguished by the 0-padded 3-digit set number.</p>
+                        <table style="mc-table-style: url('../../../../Resources/TableStyles/NoBorder.css');caption-side: top;width: 90%;" class="TableStyle_NoBorder" cellspacing="0">
+                            <col style="width: 53px;">
+                            </col>
+                            <col>
+                            </col>
+                            <tbody>
+                                <tr>
+                                    <td class="TableStyle_NoBorder_Body_0_0_RowEnd_ColSep">
+                                        <p class="zzNote">&#160;</p>
+                                    </td>
+                                    <td class="TableStyle_NoBorder_Body_0_1_RowEnd_ColEnd">
+                                        <p class="NoteHeading">TIP</p>
+                                        <p class="Note">If you need to generate one unique fastq gzipped file for use in a third-party tool, you can set the <span class="Preformatted">--fastq-cluster-count</span> option to 0</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="ListHead">Compression</p>
+                        <p class="Body" MadCap:conditions="">FASTQ files are saved compressed in the GNU zip format, an open source file compression program. This is indicated by the .gz file extension. </p>
+                        <p class="ListHead">Format</p>
+                        <p class="Body" MadCap:conditions="">Each entry in a FASTQ file consists of four lines:</p>
+                        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 0px;" />
+                            <col style="width: 24px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet1" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet1" valign="top">Sequence identifier</td>
+                            </tr>
+                        </table>
+                        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 0px;" />
+                            <col style="width: 24px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet1" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet1" valign="top">Sequence</td>
+                            </tr>
+                        </table>
+                        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 0px;" />
+                            <col style="width: 24px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet1" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet1" valign="top">Quality score identifier line (consisting of a +)</td>
+                            </tr>
+                        </table>
+                        <table class="AutoNumber_p_Bullet1" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 0px;" />
+                            <col style="width: 24px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet1" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet1" valign="top">Quality score</td>
+                            </tr>
+                        </table>
+                        <p MadCap:conditions="" class="Body">Each sequence identifier, the line that precedes the sequence and describes it, is in the following format:</p>
+                        <p class="Preformatted" MadCap:conditions="">@&lt;instrument&gt;:&lt;run number&gt;:&lt;flowcell ID&gt;:&lt;lane&gt;:&lt;tile&gt;:&lt;x-pos&gt;:&lt;y-pos&gt; &lt;read&gt;:&lt;is filtered&gt;:&lt;control number&gt;:&lt;barcode sequence&gt;</p>
+                        <p class="Body" MadCap:conditions="">The elements are described below.</p>
+                        <table class="TableStyle-Horiz" style="caption-side: top;mc-table-style: url('../../../../Resources/TableStyles/Horiz.css');" cellspacing="0">
+                            <col class="Column-Column1">
+                            </col>
+                            <col class="Column-Column1">
+                            </col>
+                            <col class="Column-Column1">
+                            </col>
+                            <thead>
+                                <tr class="Head-Header1">
+                                    <td class="HeadE-Column1-Header1">
+                                        <p class="CellHeadingLeft">Element</p>
+                                    </td>
+                                    <td class="HeadE-Column1-Header1">
+                                        <p class="CellHeadingLeft">Requirements</p>
+                                    </td>
+                                    <td class="HeadD-Column1-Header1">
+                                        <p class="CellHeadingLeft">Description</p>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft" style="font-family: 'Courier New';letter-spacing: 0em;color: #000000;"><span class="Preformatted">@</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft">@</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1">
+                                        <p class="CellBodyLeft">Each sequence identifier line starts with @</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body2">
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft" style="font-family: 'Courier New';letter-spacing: 0em;color: #000000;"><span class="Preformatted">&lt;instrument&gt;</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft">Characters allowed: </p>
+                                        <p class="CellBodyLeft">a-z, A-Z, 0-9 and underscore</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body2">
+                                        <p class="CellBodyLeft">Instrument ID</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft" style="font-family: 'Courier New';letter-spacing: 0em;color: #000000;"><span class="Preformatted">&lt;run number&gt;</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft">Numerical</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1">
+                                        <p class="CellBodyLeft">Run number on instrument</p>
+                                    </td>
+                                </tr>
+                                <tr style="height: ;" class="Body-Body2">
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft" style="font-family: 'Courier New';letter-spacing: 0em;color: #000000;"><span class="Preformatted">&lt;flowcell ID&gt;</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft">Characters allowed: </p>
+                                        <p class="CellBodyLeft">a-z, A-Z, 0-9</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body2">
+                                        <p class="CellBodyLeft">&#160;</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft" style="font-family: 'Courier New';letter-spacing: 0em;color: #000000;"><span class="Preformatted">&lt;lane&gt;</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft">Numerical</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1">
+                                        <p class="CellBodyLeft">Lane number</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body2">
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft" style="font-family: 'Courier New';letter-spacing: 0em;color: #000000;"><span class="Preformatted">&lt;tile&gt;</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft">Numerical</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body2">
+                                        <p class="CellBodyLeft">Tile number</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft" style="font-family: 'Courier New';letter-spacing: 0em;color: #000000;"><span class="Preformatted">&lt;x_pos&gt;</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft">Numerical</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1">
+                                        <p class="CellBodyLeft">X coordinate of cluster</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body2">
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft" style="font-family: 'Courier New';letter-spacing: 0em;color: #000000;"><span class="Preformatted">&lt;y_pos&gt;</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft">Numerical</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body2">
+                                        <p class="CellBodyLeft">Y coordinate of cluster</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft"><span class="Preformatted">&lt;read&gt;</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft">Numerical</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1">
+                                        <p class="CellBodyLeft">Read number. 1 can be single read or read 2 of paired-end</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body2">
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft"><span class="Preformatted">&lt;is filtered&gt;</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body2">
+                                        <p class="CellBodyLeft">Y or N</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body2">
+                                        <p class="CellBodyLeft">Y if the read is filtered (did not pass), N otherwise</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body1">
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft"><span class="Preformatted">&lt;control number&gt;</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyE-Column1-Body1">
+                                        <p class="CellBodyLeft">Numerical</p>
+                                    </td>
+                                    <td class="BodyD-Column1-Body1">
+                                        <p class="CellBodyLeft">0 when none of the control bits are on, otherwise it is an even number. See below.</p>
+                                    </td>
+                                </tr>
+                                <tr class="Body-Body2">
+                                    <td class="BodyB-Column1-Body2">
+                                        <p class="CellBodyLeft" style="font-family: 'Courier New';letter-spacing: 0em;color: #000000;"><span class="Preformatted">&lt;barcode sequence&gt;</span>
+                                        </p>
+                                    </td>
+                                    <td class="BodyB-Column1-Body2">
+                                        <p class="CellBodyLeft">ACTGCA</p>
+                                    </td>
+                                    <td class="BodyA-Column1-Body2">
+                                        <p class="CellBodyLeft">Barcode sequence</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="Body" MadCap:conditions="">An example of a valid entry is as follows; note the space preceding the read number element:</p>
+                        <p class="Preformatted" MadCap:conditions="">@EAS139:136:FC706VJ:2:5:1000:12850 1:Y:18:ATCACG</p>
+                        <p class="Preformatted">ATTCCCTATGCTAGGCTTACGATCTAGCTATCGTAC</p>
+                        <p class="Preformatted">+</p>
+                        <p class="Preformatted">BBBBCCCC?&lt;A?BC?7@@???????DBBA@@@@A@@</p>
+                        <p class="ListHead">Control Values</p>
+                        <p class="Body">The tenth columns (<span class="Preformatted">&lt;control number&gt;</span>) is zero if the read is not identified as a control. If the read is identified as a control, the number is greater than zero, and the value specifies what kind of control it is. The value is the decimal representation of a bit-wise encoding scheme, with bit 0 having a decimal value of 1, bit 1 a value of 2, bit 2 a value of 4, and so on.</p>
+                        <p class="CellBodyLeft">The bits are used as follows:</p>
+                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 9.536743E-07px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                </td>
+                                <td class="AutoNumber_p_CellBullet" valign="top">Bit 0: always empty (0)</td>
+                            </tr>
+                        </table>
+                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 9.536743E-07px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                </td>
+                                <td class="AutoNumber_p_CellBullet" valign="top">Bit 1: was the read identified as a control?</td>
+                            </tr>
+                        </table>
+                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 9.536743E-07px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                </td>
+                                <td class="AutoNumber_p_CellBullet" valign="top">Bit 2: was the match ambiguous?</td>
+                            </tr>
+                        </table>
+                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 9.536743E-07px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                </td>
+                                <td class="AutoNumber_p_CellBullet" valign="top">Bit 3: did the read match the phiX tag?</td>
+                            </tr>
+                        </table>
+                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 9.536743E-07px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                </td>
+                                <td class="AutoNumber_p_CellBullet" valign="top">Bit 4: did the read align to match the phiX tag?</td>
+                            </tr>
+                        </table>
+                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 9.536743E-07px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                </td>
+                                <td class="AutoNumber_p_CellBullet" valign="top">Bit 5: did the read match the control index sequence?</td>
+                            </tr>
+                        </table>
+                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 9.536743E-07px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                </td>
+                                <td class="AutoNumber_p_CellBullet" valign="top">Bits 6,7: reserved for future use</td>
+                            </tr>
+                        </table>
+                        <table class="AutoNumber_p_CellBullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 9.536743E-07px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_CellBullet" valign="top"><span class="Dark Grey">• </span>
+                                </td>
+                                <td class="AutoNumber_p_CellBullet" valign="top">Bits 8..15: the report key for the matched record in the controls.fasta file (specified by the REPORT_KEY metadata)</td>
+                            </tr>
+                        </table>
+                        <p>&#160;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%;caption-side: top;border-left-style: none;border-right-style: none;border-top-style: none;border-top-width: 1px;border-top-color: #b7b7b7;border-bottom-style: none;margin-left: 0;margin-right: auto;">
+            <col />
+            <col />
+            <col style="width: 30px;" />
+            <tbody>
+                <tr>
+                    <td><iframe id="mctoolbar_1808444622_0" name="mctoolbar_1808444622_0" title="Toolbar" frameborder="0" scrolling="no" style="width: 100%; height: 28px; visibility: hidden;" allowTransparency="true" MadCap:buttonItems="PreviousTopic" src="../../../../../Skin/Toolbar.htm" class="MCTopicToolbar_0"></iframe>
+                    </td>
+                    <td style="font-size: 8pt;vertical-align: top;text-align: left;border-left-style: none;border-left-width: 1px;border-left-color: #e7e7e7;border-right-style: none;border-right-width: 1px;border-right-color: #e7e7e7;border-top-style: none;border-top-width: 1px;border-top-color: #e7e7e7;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #e7e7e7;color: #666666;">
+                        <p style="margin-bottom: 2px;">&#160;</p>
+                    </td>
+                    <td style="text-align: right;"><iframe id="mctoolbar_1808444622_1" name="mctoolbar_1808444622_1" title="Toolbar" frameborder="0" scrolling="no" style="width: 100%; height: 28px; visibility: hidden;" allowTransparency="true" MadCap:buttonItems="NextTopic" src="../../../../../Skin/Toolbar.htm" class="topicToolbarProxy_1"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-top-style: solid;border-top-width: 1px;border-top-color: #b7b7b7;">
+                        <p style="margin-bottom: 2px;text-align: left;margin-left: 0.250in;" class="Footnote">© <span class="Deliverable_DetailsCopyright">2011-2013</span> Illumina, Inc. All rights reserved.</p>
+                    </td>
+                    <td style="font-size: 8pt;vertical-align: top;text-align: left;border-left-style: none;border-left-width: 1px;border-left-color: #e7e7e7;border-right-style: none;border-right-width: 1px;border-right-color: #e7e7e7;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #e7e7e7;color: #666666;border-top-style: solid;border-top-width: 1px;border-top-color: #b7b7b7;" colspan="2">
+                        <p style="margin-bottom: 2px;text-align: right;margin-right: 0;" class="Footnote"><span class="Deliverable_DetailsPN">Rev. January 2013</span>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script type="text/javascript" src="../../../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

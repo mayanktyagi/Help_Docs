@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:tocPath="BaseSpace Help|Data Reference|Files" MadCap:medium="OLHsoftware" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" lang="en-us" xml:lang="en-us" MadCap:PathToHelpSystem="../../../../../" MadCap:HelpSystemFileName="BaseSpaceHelp.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>gVCF Format</title>
+        <script type="text/javascript">/* <![CDATA[ */
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-26972076-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+		/* ]]> */</script>
+        <link href="../../../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../../../Resources/Stylesheets/GeneticEnergy.css" rel="stylesheet" />
+        <script src="../../../../SkinSupport/MadCapAll.js">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop" style="display: none;"><a href="../../../../../BaseSpaceHelp_CSH.htm#Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_gVCF.htm" style="">Open topic with navigation</a>
+        </p>
+        <p style="margin-top: 0;margin-bottom: 0;line-height: 6pt;">&#160;</p>
+        <table style="width: 100%;caption-side: top;border-left-style: none;border-right-style: none;border-top-style: none;border-top-width: 1px;border-top-color: #b7b7b7;border-bottom-style: none;">
+            <col style="width: 70px;" />
+            <col style="width: 90%;" />
+            <col style="width: 30px;" />
+            <tbody>
+                <tr>
+                    <td colspan="3">
+                        <h1>gVCF Format</h1>
+                        <p class="ListHead">What is it?</p>
+                        <p class="Body"><span class="SoftwareSoftware_Primary">BaseSpace</span> also produces the genome Variant Call Format file (gVCF). gVCF was developed to store sequencing information for both variant and non-variant positions, which is required for human clinical applications. gVCF is a set of conventions applied to the standard variant call format (VCF) 4.1 as documented by the 1000 Genomes Project. These conventions allow representation of genotype, annotation, and other information across all sites in the genome in a compact format. Typical human whole genome sequencing results expressed in gVCF with annotation are less than 1 Gbyte, or about 1/100 the size of the BAM file used for variant calling. gVCF is also equally appropriate to represent and compress targeted sequencing results.</p>
+                        <p class="Body">gVCF is a text file format, stored as a gzip compressed file (*.genome.vcf.gz). Compression is further achieved by joining contiguous non-variant regions with similar properties into single ‘block’ VCF records. To maximize the utility of gVCF, especially for high stringency applications, the properties of the compressed blocks are conservative -- thus block properties like depth and genotype quality reflect the minimum of any site in the block. The gVCF file can be indexed (creating a .tbi file) and used with existing VCF tools such as tabix and IGV, making it convenient both for direct interpretation and as a starting point for tertiary analysis.</p>
+                        <p class="Body">For more information, see <a href="https://sites.google.com/site/gvcftools/home/about-gvcf">https://sites.google.com/site/gvcftools/home/about-gvcf</a>.</p>
+                        <p class="Body">&#160;</p>
+                        <p class="ListHead">When to use it.</p>
+                        <p class="Body">Use it for direct interpretation or as a starting point for tertiary analysis with downstream analysis that are compatible with gVCF, such as tabix and IGV.</p>
+                        <p class="ListHead">When not to use it.</p>
+                        <p class="Body">Do not use it with tools that are not compatible with the gVCF format.</p>
+                        <p class="ListHead">How to use it</p>
+                        <p class="Body"><span class="SoftwareSoftware_Primary">BaseSpace</span>  apps that use gVCF files find it when kicked off and directed to the sample. If using gVCF files outside of <span class="SoftwareSoftware_Primary">BaseSpace</span>, download the file (<a href="swSEQ_mBS_Downloading_Files.htm" class="MCXref_0">Download Files</a>) to use it in outside tools.</p>
+                        <p class="ListHead">Detailed Description</p>
+                        <p class="Body">The following conventions are used in the Isaac Variant Caller gVCF files.</p>
+                        <p class="ListHead">Samples per File</p>
+                        <p class="Body">There is only one sample per gVCF file.</p>
+                        <p class="ListHead">Non-Variant Blocks Using END Key</p>
+                        <p class="Body">Continuous non-variant segments of the genome can be represented as single records in gVCF. These records use the standard 'END" INFO key to indicate the extent of the record. Even though the record can span multiple bases, only the first base is provided in the REF field to reduce file size.</p>
+                        <p class="Body">The following is a simplified segment of a gVCF file, describing a segment of non-variant calls (starting with an A) on chromosome 1 from position 51845 to 51862.</p>
+                        <p class="Preformatted">##INFO=&lt;ID=END,Number=1,Type=Integer,Description="End position of the variant described in this record"&gt;#CHROM POS ID REF ALT QUAL FILTER INFO FORMAT NA19238chr1 51845 . A . . PASS END=51862</p>
+                        <p class="Body">Any fields provided for a block of sites such as read depth (using the DP key), will show the minimum value observed among all sites encompassed by the block. Each sample value shown for the block, such as the depth (using the DP key), is restricted to a range where the maximum value is within 30% or 3 of the minimum. ie. for sample value range [x,y], y &lt;= x+max(3,x*0.3). This range restriction applies to each sample values printed out in the final block record.</p>
+                        <p class="ListHead">Indel Regions</p>
+                        <p class="Body">Note that sites which are "filled in" inside of deletions have additional changes:</p>
+                        <p class="Body">All deletions:</p>
+                        <ul>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">Sites inside of any deletion are marked with the deletion's filters, in addition to any filters which have already been applied to the site.</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">Sites inside of deletions cannot have a genotype or alternate allele quality score higher than the corresponding value from the enclosing indel.</td>
+                                </tr>
+                            </table>
+                        </ul>
+                        <p class="Body">Heterozygous deletions:</p>
+                        <ul>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">Sites inside of heterozygous deletions are altered to have haploid genotype entries (e.g. "0" instead of "0/0", "1" instead of "1/1").</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">Heterozygous SNV calls inside of heterozygous deletions are marked with the "SiteConflict" filter and their genotype is unchanged.</td>
+                                </tr>
+                            </table>
+                        </ul>
+                        <p class="Body">Homozygous deletions:</p>
+                        <ul>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">Homozygous reference and no-call sites inside of homozygous deletions have genotype "."</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">Sites inside of homozygous deletions which have a non-reference genotype are marked with a “SiteConflict” filter, and their genotype is unchanged.</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">Site and genotype quality are set to "."</td>
+                                </tr>
+                            </table>
+                        </ul>
+                        <p class="Body">The above modifications reflect the notion that the site confidence is bound by the enclosing indel confidence.</p>
+                        <p class="Body">Also note that on occasion, the variant caller will produce multiple overlapping indel calls which cannot be resolved into two haplotypes. If this occurs all indels and sites in the region of the overlap will be marked with the “IndelConflict” filter (see below).</p>
+                        <p class="ListHead">Genotype Quality for Variant and Non-variant Sites</p>
+                        <p class="Body">The gVCF file uses an adapted version of genotype quality for variant and non-variant site filtration. This value is associated with the key GQX. The GQX value is intended to represent the minimum of {Phred genotype quality assuming the site is variant, Phred genotype quality assuming the site is non-variant}. The reason for using this is to allow a single value to be used as the primary quality filter for both variant and non-variant sites. Filtering on this value corresponds to a conservative assumption appropriate for applications where reference genotype calls must be determined at the same stringency as variant genotypes, ie:</p>
+                        <ul>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">An assertion that a site is homozygous reference at GQX &gt;= 30 is made assuming the site is variant.</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">An assertion that a site is a non-reference genotype at GQX &gt;= 30 is made assuming the site is non-variant.</td>
+                                </tr>
+                            </table>
+                        </ul>
+                        <p class="ListHead">Section Descriptions</p>
+                        <p class="Body">The gVCF file contains the following sections:</p>
+                        <ul>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">Meta-information lines start with ## and contain meta-data, config information, and define the values that the INFO, FILTER and FORMAT fields can have.</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">The header line starts with # and names the fields that the data lines use. These are #CHROM, POS, ID,REF, ALT, QUAL,  FILTER, INFO, FORMAT, followed by one or more sample columns.</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top">Data lines that contain information about one or more positions in the genome.</td>
+                                </tr>
+                            </table>
+                        </ul>
+                        <p class="Body">Note that if you extract the variant lines from a gVCF file, you produce a conventional variant VCF file.</p>
+                        <p class="Body">Field Descriptions</p>
+                        <p class="Body">The fixed fields #CHROM, POS, ID, REF, ALT, QUAL are defined in the VCF 4.1 standard provided by the 1000 Genomes Project, while the fields ID, INFO, FORMAT, and sample are described in the meta-information. Descriptions are provided below.</p>
+                        <p class="ListHead">Field Description</p>
+                        <ul>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top"><span class="Bold">CHROM</span>: Chromosome: an identifier from the reference genome or an angle-bracketed ID String ("&lt;ID&gt;") pointing to a contig.</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top"><span class="Bold">POS</span>: Position: The reference position, with the 1st base having position 1. Positions are sorted numerically, in increasing order, within each reference sequence CHROM. There can be multiple records with the same POS. Telomeres are indicated by using positions 0 or N+1, where N is the length of the corresponding chromosome or contig.</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top"><span class="Bold">ID</span>: Semi-colon separated list of unique identifiers where available. If this is a dbSNP variant it is encouraged to use the rs number(s). No identifier should be present in more than one data record. If there is no identifier available, then the missing value should be used.</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top"><span class="Bold">REF</span>: Reference base(s): A,C,G,T,N; there can be multiple bases. The value in the POS field refers to the position of the first base in the string. For simple insertions and deletions in which either the REF or one of the ALT alleles would otherwise be null/empty, the REF and ALT strings include the base before the event (which is reflected in the POS field), unless the event occurs at position 1 on the contig in which case they include the base after the event. If any of the ALT alleles is a symbolic allele (an angle-bracketed ID String "&lt;ID&gt;") then the padding base is required and POS denotes the coordinate of the base preceding the polymorphism.</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top"><span class="Bold">ALT</span>: Comma separated list of alternate non-reference alleles called on at least one of the samples. Options are:<ul><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">Base strings made up of the bases A,C,G,T,N</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">angle-bracketed ID String (”&lt;ID&gt;”)</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">breakend replacement string as described in the section on breakends.<br /></td></tr></table></ul>If there are no alternative alleles, then the missing value should be used.</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top"><span class="Bold">QUAL</span>: Phred-scaled quality score for the assertion made in ALT. i.e. -10log_10 prob(call in ALT is wrong). If ALT is ”.” (no variant) then this is -10log_10 p(variant), and if ALT is not ”.” this is -10log_10 p(no variant). High QUAL scores indicate high confidence calls. Although traditionally people use integer phred scores, this field is permitted to be a floating point to enable higher resolution for low confidence calls if desired.  If unknown, the missing value should be specified. (Numeric)</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top"><span class="Bold">FILTER</span>: PASS if this position has passed all filters, i.e. a call is made at this position. Otherwise, if the site has not passed all filters, a semicolon-separated list of codes for filters that fail. gVCF files use the following values:<ul><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">PASS: position has passed all filters</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">IndelConflict: Locus is in region with conflicting indel calls.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">SiteConflict: Site genotype conflicts with proximal indel call. This is typically a heterozygous SNV call made inside of a heterozygous deletion.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">LowGQX: Locus GQX is less than 30 or not present.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">HighDPFRatio: The fraction of basecalls filtered out at a site is greater than 0.3.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">HighSNVSB: SNV strand bias value (SNVSB) exceeds 10.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">HighSNVHPOL: SNV contextual homopolymer length (SNVHPOL) exceeds 6.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">HighREFREP: Indel contains an allele which occurs in a homopolymer or dinucleotide track with a reference repeat greater than 8.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">HighDepth: Locus depth is greater than 3x the mean chromosome depth.</td></tr></table></ul></td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top"><span class="Bold">INFO</span>: Additional information. INFO fields are encoded as a semicolon-separated series of short keys with optional values in the format: &lt;key&gt;=&lt;data&gt;[,data]. gVCF files use the following values:<ul><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">END: End position of the region described in this record.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">BLOCKAVG_min30p3a: Non-variant site block. All sites in a block are constrained to be non-variant, have the same filter value, and have all sample values in range [x,y], y &lt;= max(x+3,(x*1.3)). All printed site block sample values are the minimum observed in the region spanned by the block.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">SNVSB: SNV site strand bias.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">SNVHPOL: SNV contextual homopolymer length.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">CIGAR: CIGAR alignment for each alternate indel allele</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">RU: Smallest repeating sequence unit extended or contracted in the indel allele relative to the reference. RUs are not reported if longer than 20 bases.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">REFREP: Number of times RU is repeated in reference.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">IDREP: Number of times RU is repeated in indel allele.</td></tr></table></ul></td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top"><span class="Bold">FORMAT</span>: Format of the sample field. FORMAT specifies the data types and order of the subfields. gVCF files use the following values:<ul><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">GT: Genotype.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">GQ: Genotype Quality.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">GQX: Minimum of {Genotype quality assuming variant position,Genotype quality assuming non-variant position}.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">DP: Filtered basecall depth used for site genotyping.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">DPF: Basecalls filtered from input prior to site genotyping.</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">AD: Allelic depths for the ref and alt alleles in the order listed. For indels this value only includes reads which confidently support each allele (posterior prob 0.999 or higher that read contains indicated allele vs all other intersecting indel alleles).</td></tr></table><table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0"><col style="width: 24px;" /><col style="width: 24px;" /><col style="width: auto;" /><tr><td valign="top" /><td class="AutoNumber_li" valign="top"><span class="Light_Grey"> • </span></td><td class="AutoNumber_li" MadCap:autonum=" • " valign="top">DPI: Read depth associated with indel, taken from the site preceding the indel.</td></tr></table></ul></td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_li" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: -24px;" />
+                                <col style="width: 24px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_li" valign="top"><span class="Bold"><span style="color: #b7b7b7;" class="mcFormatColor">• </span></span>
+                                    </td>
+                                    <td class="AutoNumber_li" MadCap:autonum="&lt;span style=&quot;color: #b7b7b7;&quot; class=&quot;mcFormatColor&quot;&gt;• &lt;/span&gt;" valign="top"><span class="Bold">SAMPLE</span>: Sample fields as defined by the header.</td>
+                                </tr>
+                            </table>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%;caption-side: top;border-left-style: none;border-right-style: none;border-top-style: none;border-top-width: 1px;border-top-color: #b7b7b7;border-bottom-style: none;margin-left: 0;margin-right: auto;">
+            <col />
+            <col />
+            <col style="width: 30px;" />
+            <tbody>
+                <tr>
+                    <td><iframe id="mctoolbar_1808444622_0" name="mctoolbar_1808444622_0" title="Toolbar" frameborder="0" scrolling="no" style="width: 100%; height: 28px; visibility: hidden;" allowTransparency="true" MadCap:buttonItems="PreviousTopic" src="../../../../../Skin/Toolbar.htm" class="MCTopicToolbar_0"></iframe>
+                    </td>
+                    <td style="font-size: 8pt;vertical-align: top;text-align: left;border-left-style: none;border-left-width: 1px;border-left-color: #e7e7e7;border-right-style: none;border-right-width: 1px;border-right-color: #e7e7e7;border-top-style: none;border-top-width: 1px;border-top-color: #e7e7e7;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #e7e7e7;color: #666666;">
+                        <p style="margin-bottom: 2px;">&#160;</p>
+                    </td>
+                    <td style="text-align: right;"><iframe id="mctoolbar_1808444622_1" name="mctoolbar_1808444622_1" title="Toolbar" frameborder="0" scrolling="no" style="width: 100%; height: 28px; visibility: hidden;" allowTransparency="true" MadCap:buttonItems="NextTopic" src="../../../../../Skin/Toolbar.htm" class="topicToolbarProxy_1"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-top-style: solid;border-top-width: 1px;border-top-color: #b7b7b7;">
+                        <p style="margin-bottom: 2px;text-align: left;margin-left: 0.250in;" class="Footnote">© <span class="Deliverable_DetailsCopyright">2011-2013</span> Illumina, Inc. All rights reserved.</p>
+                    </td>
+                    <td style="font-size: 8pt;vertical-align: top;text-align: left;border-left-style: none;border-left-width: 1px;border-left-color: #e7e7e7;border-right-style: none;border-right-width: 1px;border-right-color: #e7e7e7;border-bottom-style: none;border-bottom-width: 1px;border-bottom-color: #e7e7e7;color: #666666;border-top-style: solid;border-top-width: 1px;border-top-color: #b7b7b7;" colspan="2">
+                        <p style="margin-bottom: 2px;text-align: right;margin-right: 0;" class="Footnote"><span class="Deliverable_DetailsPN">Rev. January 2013</span>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script type="text/javascript" src="../../../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>
